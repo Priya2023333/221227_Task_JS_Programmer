@@ -1,0 +1,134 @@
+.invoicebackground{
+ 
+    background-color: rgb(253, 200, 144);
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    border-radius:16px;
+    }
+   .topleft{position:fixed;left:18px;top:28px;color:red;}
+.tableheader{background-color: rgb(250, 249, 248);
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    border-radius:16px;
+    overflow-x:auto;
+color:black}  
+    .drpdownheader1{
+        padding: 16px;
+        font-size: 16px;
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .dropbtn1 {
+          background-color: blue;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          border-radius:16px;
+        }
+        
+        .dropbtn2 {
+          background-color: grey;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          border-radius:16px;
+        }
+        .dropbtn3 {
+          background-color: orange;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          border-radius:16px;
+        }
+        .dropbtn4 {
+          background-color: lightblue;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          border-radius:16px;
+        }
+        dropbtn5 {
+            background-color: rgb(220, 234, 239);
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius:16px;
+          }
+        .dropdown1 {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content1 {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content1 a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown-content1 a:hover {background-color: #f1f1f1}
+        
+        .dropdown1:hover .dropdown-content1 {
+          display: block;
+        
+        .dropdown1:hover .dropbtn1 {
+          background-color: red;
+        }
+        tr{ 
+            color:black;
+            padding: 16px;
+    font-size: 16px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+                }
+                .tableheader1{
+                    background-color: white;
+                     color:red;
+                        padding-top: 10px;
+                        padding-right: 30px;
+                        padding-bottom: 50px;
+                        padding-left: 30px;
+                        border-radius:16px;
+                        overflow-x:auto;}
+                        .status.paid {
+                            background-color: #86e49d;
+                            color: #006b21;
+                        }
+                        
+                        .status.draft {
+                            background-color: #d893a3;
+                            color: #b30021;
+                        }
+                        
+                        .status.unpaid{
+                            background-color: #ebc474;
+                        }
+                        
+                        .status.shipped {
+                            background-color: #6fcaea;
+                        }  
+                        

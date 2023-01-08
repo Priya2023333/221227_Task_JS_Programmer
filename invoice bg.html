@@ -1,0 +1,118 @@
+<html>
+<title>Invoice Table</title>
+<link rel="stylesheet" href="C:\Users\Prana\t.css">
+<script src="C:\Users\Prana\src.js"></script>
+<body style="background-color:#e8f0fe;">
+    <div class="invoicebackground">
+        <div class="topleft">All invoices</div>
+        <div class="drpdownheader1">Begin Date
+            
+            <input class="dropbtn1" type="date" placeholder="Enter begin date" required />
+          
+ 
+            End Date
+            <input class="dropbtn2" type="date" placeholder="Enter End date" required />
+            Status
+  <select class="dropbtn3">
+  <option class="dropdown1" value="" selected="selected">Any</option></select>
+  <div class="dropdown-content1">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  </div>
+   Client
+  <select class="dropbtn4">
+  <option class="dropdown1" value="" selected="selected">Any</option></select>
+  <div class="dropdown-content1">
+ 
+  </div>
+          
+       </div>
+        </div>
+        <table class="dropbtn5">
+            <tr  class="tableheader">
+                <th class="tableheader" data-column="invoiceid" data-order="desc">Invoice id. &#9650</th>
+                <th class="tableheader"data-column="clientname" data-order="desc">Client Name &#9650</th>
+                <th class="tableheader"data-column="clienttype" data-order="desc">Client Type &#9650</th>
+                <th class="tableheader" data-column="date" data-order="desc">Date &#9650</th>
+                <th class="tableheader" data-column="duedate" data-order="desc">Due Date &#9650</th>
+                <th class="tableheader" data-column="total" data-order="desc">Total &#9650</th>
+                <th class="tableheader" data-column="balance" data-order="desc">Balance &#9650</th>
+                <th class="tableheader" data-column="status" data-order="desc">Status &#9650</th>
+            </tr>
+        
+            <tbody class="tableheader" id="myTable">
+                
+            </tbody>
+        </table>
+        
+        <script>
+            var myJasonArray = [
+                {'invoiceid':'1','clientname':'Anna jay','clienttype':'in-state','date':'5/1/2019','duedate':'6/2/2019','total':'$658','balance':'$658','status':'paid'},
+                {'invoiceid':'2','clientname':'Shreya singh','clienttype':'in-state','date':'7/7/2019','duedate':'6/8/2019','total':'$758','balance':'$658','status':'unpaid'},
+                {'invoiceid':'3','clientname':'Sumit Singh','clienttype':'out-state','date':'12/1/2019','duedate':'6/12/2019','total':'$558','balance':'$358','status':'unpaid'},
+                {'invoiceid':'4','clientname':'Priya sharma','clienttype':'out-state','date':'6/5/2019','duedate':'16/6/2019','total':'$658','balance':'$658','status':'paid'},
+                {'invoiceid':'5','clientname':'Usha ray','clienttype':'in-state','date':'5/1/2019','duedate':'6/2/2019','total':'$658','balance':'$658','status':'paid'},
+                {'invoiceid':'6','clientname':'Veena singh','clienttype':'in-state','date':'5/1/2019','duedate':'6/2/2019','total':'$658','balance':'$658','status':'paid'},
+                {'invoiceid':'7','clientname':'akshay verma','clienttype':'out-state','date':'8/1/2019','duedate':'6/2/2019','total':'$658','balance':'$658','status':'paid'},
+               {'invoiceid':'8','clientname':'Ujwal dixit','clienttype':'in-state','date':'5/6/2019','duedate':'7/7/2019','total':'$758','balance':'$758','status':'paid'},
+                {'invoiceid':'9','clientname':'Umesh ','clienttype':'in-state','date':'9/1/2019','duedate':'9/2/2019','total':'$558','balance':'$558','status':'paid'},
+                {'invoiceid':'10','clientname':'Rahul roy','clienttype':'in-state','date':'7/1/2019','duedate':'6/2/2019','total':'$658','balance':'$458','status':'unpaid'},
+               ,
+                {'invoiceid':'11','clientname':'Suchi sharma','clienttype':'in-state','date':'5/5/2019','duedate':'6/9/2019','total':'$658','balance':'$658','status':'paid'},
+                 {'invoiceid':'12','clientname':'Kiran','clienttype':'in-state','date':'5/1/2019','duedate':'3/2/2019','total':'$658','balance':'$658','status':'paid'},
+                  {'invoiceid':'13','clientname':'Usha s','clienttype':'out-state','date':'5/1/2019','duedate':'6/2/2019','total':'$658','balance':'$658','status':'paid'},
+                   {'invoiceid':'14','clientname':'kalyan tiwari','clienttype':'in-state','date':'5/1/2019','duedate':'6/2/2019','total':'$658','balance':'$658','status':'paid'},
+                    {'invoiceid':'15','clientname':'Aman verma','clienttype':'out-state','date':'5/1/2019','duedate':'6/2/2019','total':'$658','balance':'$658','status':'paid'}
+                
+            ]
+        
+            $('th').on('click', function(){
+                var column = $(this).data('column')
+                var order = $(this).data('order')
+                var text = $(this).html()
+                text = text.substring(0, text.length - 1)
+
+                
+        
+                if(order == 'desc'){
+                    $(this).data('order', "asc")
+                    myJasonArray = myJasonArray.sort((a,b) => a[column] > b[column] ? 1 : -1)
+                    text += '&#9660'
+        
+                }else{
+                    $(this).data('order', "desc")
+                    myJasonArray = myJasonArray.sort((a,b) => a[column] < b[column] ? 1 : -1)
+                    text += '&#9650'
+        
+                }
+                $(this).html(text)
+                buildTable(myJasonArray)
+            })
+        
+            buildTable(myJasonArray)
+        
+            function buildTable(data){
+                var table = document.getElementById('myTable')
+                table.innerHTML = ''
+                for (var i = 0; i < data.length; i++){
+                    var row = `<tr>
+                                    <td>${data[i].invoiceid}</td>
+                                    <td>${data[i].clientname}</td>
+                                    <td>${data[i].clienttype}</td>
+                                    <td>${data[i].date}</td>
+                                    <td>${data[i].duedate}</td>
+                                    <td>${data[i].total}</td>
+                                    <td>${data[i].balance}</td>
+                                    <td> ${data[i].status}</td>
+                                   
+                              </tr>`
+                    table.innerHTML += row
+        
+        
+                }
+            }
+        
+        </script>
+</body>
+</html>
